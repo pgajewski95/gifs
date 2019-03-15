@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class GitController {
+public class GifController {
 @Autowired
     GifRepository gifRepository = new GifRepository();
     @RequestMapping("/")
@@ -24,6 +25,15 @@ public class GitController {
 
 
         return "home";
+    }
+
+    @RequestMapping("/favorites")
+    public String gifFavorities(ModelMap modelMap){
+        List<Gif> gifs= gifRepository.getFavorite();
+
+        modelMap.put("gifs", gifs);
+        return "favorites";
+
     }
 
 }
