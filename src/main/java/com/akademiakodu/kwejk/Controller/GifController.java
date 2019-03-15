@@ -1,6 +1,8 @@
 package com.akademiakodu.kwejk.Controller;
 
+import com.akademiakodu.kwejk.Model.Category;
 import com.akademiakodu.kwejk.Model.Gif;
+import com.akademiakodu.kwejk.data.CategoryRepository;
 import com.akademiakodu.kwejk.data.GifRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,5 +37,6 @@ public class GifController {
         return "favorites";
 
     }
+
 
 }
